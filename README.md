@@ -17,6 +17,7 @@ This project is a simple WhatsApp automation script using Puppeteer. It leverage
 1. Clone the repository and Install dependencies:
    ```bash
    git clone https://github.com/sunjay-dev/whatsapp-bot-with-puppeteer.git
+   cd whatsapp-bot-with-puppeteer
    npm install
    ```
 2. Run the script:
