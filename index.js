@@ -26,7 +26,7 @@ const ErrorHandler = require('debug')('whats_app:Error');
     console.log("Run a loop to send message 100 times :hahaha:");
     for (let i = 1; i <= 100; i++) {
       console.log("Typing our text in the input field");
-      await page.type("div.lhggkp7q.qq0sjtgm.jxacihee.c3x5l3r8.b9fczbqn.t35qvd06.m62443ks.rkxvyd19.c5h0bzs2.bze30y65.kao4egtt", i + ". Muzamil is a hot boy" );
+      await page.type("div.lhggkp7q.qq0sjtgm.jxacihee.c3x5l3r8.b9fczbqn.t35qvd06.m62443ks.rkxvyd19.c5h0bzs2.bze30y65.kao4egtt", "Message number "+ i );
       await page.keyboard.press('Enter');
       
       console.log(`Message sent: ${i} times.`);
