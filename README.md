@@ -24,6 +24,41 @@ This project includes `package.json`, `package-lock.json`, and `node_modules` in
 
 It's recommended to use `npm install` to fetch the dependencies locally and ensure compatibility. If needed, you can choose to exclude `node_modules` from version control by modifying the `.gitignore` file.
 
+### How to find the `executablePath` for Google Chrome, you can follow these steps:
+
+1. **Windows:**
+   - Right-click on the Google Chrome shortcut on your desktop or in the Start menu.
+   - Select "Properties" from the context menu.
+   - In the "Shortcut" tab, you will see a field labeled "Target."
+   - Copy the text in the "Target" field. It should look something like this:
+
+     ```
+     "C:\Program Files\Google\Chrome\Application\chrome.exe"
+     ```
+
+   - Use this path as the `executablePath` in your Puppeteer configuration.
+
+2. **macOS:**
+   - Open a terminal.
+   - Run the following command:
+
+     ```bash
+     /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+     ```
+
+   - Copy the path returned by this command and use it as the `executablePath` in your Puppeteer configuration.
+
+3. **Linux:**
+   - Open a terminal.
+   - Run the following command:
+
+     ```bash
+     which google-chrome
+     ```
+
+   - Copy the path returned by this command and use it as the `executablePath` in your Puppeteer configuration.
+
+
 ## Important Note
 
 This script is for educational and demonstrative purposes only. It's crucial to use automation scripts responsibly and within the terms of service of the platforms you interact with.
