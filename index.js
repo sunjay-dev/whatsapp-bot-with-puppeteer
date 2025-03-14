@@ -6,7 +6,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// Function to wait for user to press Enter
 const waitForEnter = () => new Promise(resolve => {
   rl.question('Select the Prey then Press Enter to continue...', () => {
     resolve();
@@ -29,7 +28,7 @@ const waitForEnter = () => new Promise(resolve => {
 
   const options = {
     headless: false,
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', //read how to get your executable in Readme
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
   };
 
   try {
@@ -37,7 +36,7 @@ const waitForEnter = () => new Promise(resolve => {
     const page = await browser.newPage();
 
     console.log("Browser launched & created a new page. \nGoing to [whats app]]!");
-    await page.goto('http://web.whatsapp.com'); //opens WhatsApp web
+    await page.goto('http://web.whatsapp.com');
 
     // Wait for the user to press Enter
     await waitForEnter();
@@ -51,15 +50,16 @@ const waitForEnter = () => new Promise(resolve => {
     console.log(`Run a loop to send message ${times} times: ${message}`);
     for (let i = 1; i <= times; i++) {
       console.log("Typing our text in the input field");
-      await page.type("div.lhggkp7q.qq0sjtgm.jxacihee.c3x5l3r8.b9fczbqn.t35qvd06.m62443ks.rkxvyd19.c5h0bzs2.bze30y65.kao4egtt", message);
+      await page.type('[aria-label="Type a message"]', message);
       await page.keyboard.press('Enter');
 
       console.log(`Message sent: ${i} times.`);
       await new Promise(resolve => setTimeout(resolve, gap * 1000)); // Gap between every 2 messages
     }
 
+    
     console.log("Send one last message to notify it's just a funny project!");
-    await page.type("div.lhggkp7q.qq0sjtgm.jxacihee.c3x5l3r8.b9fczbqn.t35qvd06.m62443ks.rkxvyd19.c5h0bzs2.bze30y65.kao4egtt", `Dear, Don't be angry please. It's a funny project & I chose you as one of my experimental Guinea pigs because I know you won't be bored and angry at me at all.`, { delay: 100 });
+    await page.type('[aria-label="Type a message"]', `Dear, Don't be angry please. It's a funny project & I chose you as one of my experimental.`, { delay: 100 });
     await page.keyboard.press('Enter');
 
     await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 sec before closing browser
