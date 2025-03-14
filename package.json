@@ -1,7 +1,11 @@
 {
+  "name": "whatsapp-bot-with-puppeteer",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
   "dependencies": {
-    "puppeteer": "^21.3.5",
-    "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2"
+    "puppeteer": "^21.3.5"
   }
 }
