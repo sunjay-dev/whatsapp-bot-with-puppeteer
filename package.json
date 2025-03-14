@@ -6,6 +6,6 @@
     "start": "node script.js"
   },
   "dependencies": {
-    "puppeteer": "^21.3.5"
+    "puppeteer-core": "^24.4.0"
   }
 }

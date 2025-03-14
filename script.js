@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const readline = require('readline');
 const inputFieldPath = "[aria-label='Type a message']"; 
 
@@ -30,6 +30,7 @@ async function main(message, times, gap, notify) {
     try {
         const browser = await puppeteer.launch(options);
         const page = await browser.newPage();
+        await page.setViewport({ width: 1280, height: 800 });
 
         console.log("Browser launched & created a new page. \nGoing to [whats app]]!");
         await page.goto('http://web.whatsapp.com');
@@ -42,6 +43,7 @@ async function main(message, times, gap, notify) {
             await browser.close();
             return;
         }
+
         console.log("Message is going to start in ")
         for (let i = 5; i >= 0; i--) {
             console.log(`${i} seconds`)
@@ -60,7 +62,7 @@ async function main(message, times, gap, notify) {
 
         if (notify.toLowerCase() === 'y') {
         console.log("Send one last message to notify it's just a funny project!");
-        await page.type(inputFieldPath, `Dear, Don't be angry please. It's a funny project & I chose you as one of my experimental.`, { delay: 100 });
+        await page.type(inputFieldPath, `Dear, Don't be angry please. It's a funny project & I chose you as one of my experimental user.`, { delay: 100 });
         await page.keyboard.press('Enter');
 
         await new Promise(resolve => setTimeout(resolve, 2000)); 
@@ -74,6 +76,5 @@ async function main(message, times, gap, notify) {
         rl.close();
     }
 }
-
 
 start();
