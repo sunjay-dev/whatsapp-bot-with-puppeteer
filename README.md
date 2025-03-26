@@ -23,7 +23,7 @@ This project is a simple WhatsApp automation script using Puppeteer. It leverage
    ```
 2. Run the script:
    ```bash
-   node index.js
+   node script.js
    ```
 
 ### Note on Node Modules
